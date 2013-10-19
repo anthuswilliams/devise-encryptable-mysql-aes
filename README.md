@@ -12,6 +12,18 @@ gem 'devise-encryptable-mysql-aes'
 
 Then migrate the encrypted_password field of the table with which you are using devise to :binary rather than :string. 
 
+```ruby
+class ChangeUserEncryptedPasswordType < ActiveRecord::Migration
+  def up
+    change_column :users, :encrypted_password, :binary 
+  end
+
+  def down
+    raise ActiveRecord::IrreversibleMigration
+  end
+end
+```
+
 Next, add a password_salt field to the same table, e.g.
 
 ````console
