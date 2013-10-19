@@ -11,5 +11,4 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency('devise','>= 3.1.1')
   gem.add_dependency('devise-encryptable', '>= 0.1.2')
-  gem.add_dependency('openssl')
 end
