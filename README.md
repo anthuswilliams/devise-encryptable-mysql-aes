@@ -31,6 +31,11 @@ rails generate migration add_password_salt_to_user
 rake db:migrate
 ````
 
+Add :encryptable to the model which is using devise
+````ruby
+devise :encryptable
+````
+
 Finally, change config/initializers/devise.rb
 
 ```ruby
